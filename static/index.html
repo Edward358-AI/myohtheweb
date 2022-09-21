@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MyohTheWeb</title>
+  <link rel="icon" type="image/x-icon" href="/supercorn.gif" defer>
+</head>
+</head>
+
+<body>
+
+    <div title="MyohTheWeb Logo" class="logo-wrapper">
+        <img class="logo" src="/supercorn.gif"
+            alt="a sparkly unicorn" />
+        <h1 title="MyohTheWeb">MyohTheWeb</h1>
+    </div>
+    <form>
+        <input placeholder="Search the web with MyohTheWeb">
+    </form>
+    <div title="r3ality" class="desc">
+        <p>Unlimited access to the world wide web is now a r3ality<br>Made by r3ality_cubed#7958<br><br>Visit <a href="https://myohthegod.net"><i>my website</i></a> for more cool stuff!</p>
+    </div>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="index.js" defer></script>
+</body>
+  
+
+</html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: Roboto;
+}
+
+body {
+    margin: 0;
+    color: darkorchid;
+    background-image: linear-gradient(135deg, red,orange,yellow,green,blue,indigo,violet);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeInAnimation ease-in-out 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+.ball {
+    position: absolute;
+    border-radius: 25%;
+    opacity: 0.5;
+}
+
+.fa-magnifying-glass {
+    color: white;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo-wrapper .text {
+    font-size: 75px;
+    font-family: Roboto;
+    color: #FFF;
+}
+
+.logo-wrapper h1 {
+    color: darkorchid;
+  font-size: 36px;
+    font-family: Square Peg, cursive;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+             -webkit-font-smoothing: antialiased;
+}
+
+form {
+    margin-top: 5mm;
+    display: flex;
+    justify-content: center;
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5mm;
+}
+
+.desc p {
+    width: 560px;
+    color: lightskyblue;
+    font-size: 18px;
+    font-family: Nunito;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+             -webkit-font-smoothing: antialiased;
+}
+
+form input {
+    font-family: monospace;
+    background-color: #d6d6ff;
+    text-align: center;
+    height: 24px;
+    width: 4in;
+    border: 1px solid #009dff;
+    color: var(--text-color);
+    border-radius: 7px;
+    outline: none;
+    padding: 2.5px 3px 2.5px 3px;
+    color: navy;
+}
+
+form input:focus {
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    animation: fadeInAnimation ease-in-out 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+</style>
+<script defer>
+const colors = ["red","orange","yellow","green","blue","indigo","violet"];
+
+const numBalls = 77;
+const balls = [];
+
+for (let i = 0; i < numBalls; i++) {
+  let ball = document.createElement("div");
+  ball.classList.add("ball");
+  ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+  ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+  ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+  ball.style.transform = `scale(${Math.random()})`;
+  ball.style.width = `${Math.random()}em`;
+  ball.style.height = ball.style.width;
+  ball.style.position = "fixed"
+  balls.push(ball);
+  document.body.append(ball);
+}
+
+balls.forEach((el, i, ra) => {
+  let to = {
+    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+    y: Math.random() * 12
+  };
+
+  let anim = el.animate(
+    [
+      { transform: "translate(0, 0)" },
+      { transform: `translate(${to.x}rem, ${to.y}rem)` }
+    ],
+    {
+      duration: (Math.random() + 1) * 10000, 
+      direction: "alternate-reverse",
+      iterations: Infinity
+    }
+  );
+});
+</script>
