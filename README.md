@@ -13,4 +13,4 @@ https://replit.com/github/Edward-358-AI/myohtheweb
 If replit asks you to configure the run button, delete any text and replace with "./main.sh"
 
 ZIP archive download:
-https://replit.com/@edjiang1234/myohtheweb.zip OR https://github.com/Edward358-AI/myohtheweb/archive/refs/heads/main.zip
+https://github.com/Edward358-AI/myohtheweb/archive/refs/heads/main.zip
