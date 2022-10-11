@@ -1,6 +1,6 @@
-import Server from './node_modules/bare-server-node';
+import Server from './node_modules/bare-server-node/Server';
 import http from 'http';
-import nodeStatic from './node_modules/node-static';
+import nodeStatic from './node_modules/node-static/lib/node-static';
 
 
 const bare =  new Server('/bare/', '');
