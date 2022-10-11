@@ -1,6 +1,6 @@
-import Server from '@tomphttp/bare-server-node';
+import Server from './node_modules/bare-server-node';
 import http from 'http';
-import nodeStatic from 'node-static';
+import nodeStatic from './node_modules/node-static';
 
 
 const bare =  new Server('/bare/', '');
