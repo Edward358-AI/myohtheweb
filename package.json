@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bare-server-node": "github:tomphttp/bare-server-node",
+    "bare-server-node": "@tomphttp/bare-server-node",
     "node-static": "^0.7.11"
   },
   "name": "uv-app",
