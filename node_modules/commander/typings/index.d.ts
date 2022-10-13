@@ -131,6 +131,18 @@ export class Option {
   conflicts(names: string | string[]): this;
 
   /**
+   * Specify implied option values for when this option is set and the implied options are not.
+   *
+   * The custom processing (parseArg) is not called on the implied values.
+   *
+   * @example
+   * program
+   *   .addOption(new Option('--log', 'write logging information to file'))
+   *   .addOption(new Option('--trace', 'log extra details').implies({ log: 'trace.txt' }));
+   */
+  implies(optionValues: OptionValues): this;
+
+  /**
    * Set environment variable to check for option value.
    * Priority order of option values is default < env < cli
    */
@@ -190,7 +202,7 @@ export class Help {
 
   /** Get the command term to show in the list of subcommands. */
   subcommandTerm(cmd: Command): string;
-  /** Get the command description to show in the list of subcommands. */
+  /** Get the command summary to show in the list of subcommands. */
   subcommandDescription(cmd: Command): string;
   /** Get the option term to show in the list of options. */
   optionTerm(option: Option): string;
@@ -523,10 +535,10 @@ export class Command {
    *
    * @returns `this` command for chaining
    */
-  option(flags: string, description?: string, defaultValue?: string | boolean): this;
+  option(flags: string, description?: string, defaultValue?: string | boolean | string[]): this;
   option<T>(flags: string, description: string, fn: (value: string, previous: T) => T, defaultValue?: T): this;
   /** @deprecated since v7, instead use choices or a custom function */
-  option(flags: string, description: string, regexp: RegExp, defaultValue?: string | boolean): this;
+  option(flags: string, description: string, regexp: RegExp, defaultValue?: string | boolean | string[]): this;
 
   /**
    * Define a required option, which must have a value after parsing. This usually means
@@ -534,10 +546,10 @@ export class Command {
    *
    * The `flags` string contains the short and/or long flags, separated by comma, a pipe or space.
    */
-  requiredOption(flags: string, description?: string, defaultValue?: string | boolean): this;
+  requiredOption(flags: string, description?: string, defaultValue?: string | boolean | string[]): this;
   requiredOption<T>(flags: string, description: string, fn: (value: string, previous: T) => T, defaultValue?: T): this;
   /** @deprecated since v7, instead use choices or a custom function */
-  requiredOption(flags: string, description: string, regexp: RegExp, defaultValue?: string | boolean): this;
+  requiredOption(flags: string, description: string, regexp: RegExp, defaultValue?: string | boolean | string[]): this;
 
   /**
    * Factory routine to create a new unattached option.
@@ -705,6 +717,18 @@ export class Command {
    * Get the description.
    */
   description(): string;
+
+  /**
+   * Set the summary. Used when listed as subcommand of parent.
+   *
+   * @returns `this` command for chaining
+   */
+
+  summary(str: string): this;
+  /**
+   * Get the summary.
+   */
+  summary(): string;
 
   /**
    * Set an alias for the command.
