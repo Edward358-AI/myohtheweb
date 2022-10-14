@@ -5,7 +5,7 @@ import nodeStatic from 'node-static';
 
 const bare =  createServer('/bare/');
 const serve = new nodeStatic.Server('static/');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3030;
 const server = http.createServer();
 
 server.on('request', (req, res) => {
