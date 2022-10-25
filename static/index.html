@@ -40,12 +40,6 @@ body {
     animation-fill-mode: forwards;
     overflow: hidden;
 }
-.ball {
-    position: absolute;
-    border-radius: 25%;
-    opacity: 0.5;
-}
-
 .fa-magnifying-glass {
     color: white;
 }
@@ -122,7 +116,12 @@ form input:focus {
     animation-fill-mode: forwards;
 }
 
-
+html {
+  animation-name: fadeInAnimation;
+  animation-duration: 0.3s;
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 <script defer>
 const colors = ["red","orange","yellow","green","blue","indigo","violet"];
@@ -140,6 +139,8 @@ for (let i = 0; i < numBalls; i++) {
   ball.style.width = `${Math.random()}em`;
   ball.style.height = ball.style.width;
   ball.style.position = "fixed"
+  ball.style.borderRadius = "30%";
+  ball.style.opacity = 0.5;
   balls.push(ball);
   document.body.append(ball);
 }
