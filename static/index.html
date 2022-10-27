@@ -149,7 +149,6 @@ const balls = [];
 
 for (let i = 0; i < numBalls; i++) {
   let ball = document.createElement("div");
-  ball.classList.add("ball");
   ball.style.background = colors[Math.floor(Math.random() * colors.length)];
   ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
   ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
@@ -158,7 +157,8 @@ for (let i = 0; i < numBalls; i++) {
   ball.style.height = ball.style.width;
   ball.style.position = "fixed";
   ball.style.borderRadius = "30%";
-  ball.style.opacity = 0.5
+  ball.style.opacity = 0.5;
+  ball.style.overflow = "hidden";
   balls.push(ball);
   document.body.append(ball);
 }
