@@ -1,5 +1,5 @@
 language = "nodejs"
-run = "bash main.sh"
+run = "./main.sh"
 
 [env]
 XDG_CONFIG_HOME = "/home/runner/.config"
