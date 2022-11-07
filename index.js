@@ -2,10 +2,9 @@ import createServer from '@tomphttp/bare-server-node';
 import http from 'http';
 import nodeStatic from 'node-static';
 
-
 const bare =  createServer('/bare/');
 const serve = new nodeStatic.Server('static/');
-const PORT = process.env.PORT || 3030;
+const PORT = 3030;
 const server = http.createServer();
 
 server.on('request', (req, res) => {
@@ -24,6 +23,4 @@ server.on('upgrade', (req, socket, head) => {
 	}
 });
 
-server.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`);
-});
+server.listen(PORT, () => {console.log(`> server started on port ${PORT}`);});

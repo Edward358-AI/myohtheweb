@@ -1,6 +1,5 @@
 language = "nodejs"
-run = "./main.sh"
-onBoot = "chmod u+x main.sh"
+run = "node index.js"
 
 [env]
 XDG_CONFIG_HOME = "/home/runner/.config"

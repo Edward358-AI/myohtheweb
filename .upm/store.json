@@ -1,1 +1,1 @@
-{"version":2,"languages":{"nodejs-npm":{"specfileHash":"fba4ac5517b56daf00bc263fb49547cb","lockfileHash":"17e28950247c5e8d26ca9cf0e51940a1","guessedImportsHash":"d669394628498d3e41afc15bdad9a7a3"}}}
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"ddc28ec003e160b72b3088402c42e3d0","lockfileHash":"eb09ec66bd2ed7b1b7b652c87a114bbf","guessedImports":["@tomphttp/bare-server-node","node-static","express"],"guessedImportsHash":"3a69466e6dfdfc1e2f636a48d2c422db"}}}
