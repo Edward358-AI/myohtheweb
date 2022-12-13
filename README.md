@@ -1,4 +1,5 @@
 # MyohTheWeb
+## UPDATED VERSION: https://github.com/Edward358-AI/myohtheweb-updated/
 A fast and free proxy to the unblocked web
 
 To run locally: Open Command Prompt, Shell, or whatever and type
