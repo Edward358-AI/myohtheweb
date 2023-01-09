@@ -5,7 +5,7 @@ A fast and free proxy to the unblocked web
 To run locally: Open Command Prompt, Shell, or whatever and type
 ```
 git clone https://github.com/Edward358-AI/myohtheweb.git
-cd /*directory*/myohtheweb
+cd myohtheweb
 chmod +x main.sh
 ./main.sh
 ```
